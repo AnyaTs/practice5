@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct person {
+  char surname[30];
+  char name[30];
+  char patronymic[30];
+  int number[3];
+  int month[3];
+  int year[5];
+  struct person *next;
+};
+
+int main() {
+  printf("Вы можете добавить свои данные. После введения данных у вас есть возможность :\n\t-1 PID(вывести фамилию,имя и дату рождения);\n\t-2 BD(вывести отчество и дату рождения)\n");
+  struct person person;
+  int n;
+  printf("Введите фамилию: \n");
+  scanf("%s",person.surname);
+  printf("Введите имя: \n");
+  scanf("%s",person.name);
+  printf("Введите отчество: \n");
+  scanf("%s",person.patronymic);
+  printf("Введите число: \n");
+  scanf("%d",person.number);
+  printf("Введите месяц: \n");
+  scanf("%d",person.month);
+  printf("Введите год: \n");
+  scanf("%d",person.year);
+
+  printf("Введите цифру: 1 или 2: ");
+  scanf("%d",&n);
+  if(n == 1){
+    printf("Фамилия: %s\n",person.surname);
+    printf("Имя: %s\n",person.name);
+    
+    printf("Число: %d\n",*person.number);
+    printf("Месяц: %d\n",*person.month);
+    printf("Год: %d\n",*person.year);
+  }
+  if(n == 2){
+    printf("Отчество: %s\n",person.patronymic);
+    printf("Число: %d\n",*person.number);
+    printf("Месяц: %d\n",*person.month);
+    printf("Год: %d\n",*person.year);
+  }
+}
